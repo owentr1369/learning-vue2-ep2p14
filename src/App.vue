@@ -1,10 +1,7 @@
 <template>
   <div>
-    <h1>Hello</h1>
-    <p>a :{{ tanga }}</p>
-    <p>b : {{ tangb }}</p>
-    <button @click="a++">Tang a</button>
-    <button @click="b++">Tang b</button>
+    <p>{{ diem }}</p>
+    <input type="text" v-model="diem" />
   </div>
 </template>
 
@@ -15,19 +12,13 @@ export default {
   name: "App",
   data() {
     return {
-      a: 0,
-      b: 0,
+      diem: "Ban A co mon toan 7 diem",
     };
   },
   methods: {},
-  computed: {
-    tanga: function () {
-      console.log("tang a");
-      return this.a;
-    },
-    tangb: function () {
-      console.log("tang b");
-      return this.b;
+  watch: {
+    diem: function () {
+      alert("Diem cua ban ay da duoc thay doi sang diem khac");
     },
   },
 };
