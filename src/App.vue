@@ -1,7 +1,8 @@
 <template>
   <div>
-    <p>{{ diem }}</p>
-    <input type="text" v-model="diem" />
+    <p>App</p>
+    <a v-bind:href="linkVal"> Link </a>
+    <button @click="changeLink">Click to change link</button>
   </div>
 </template>
 
@@ -12,13 +13,12 @@ export default {
   name: "App",
   data() {
     return {
-      diem: "Ban A co mon toan 7 diem",
+      linkVal: "https://www.google.com",
     };
   },
-  methods: {},
-  watch: {
-    diem: function () {
-      alert("Diem cua ban ay da duoc thay doi sang diem khac");
+  methods: {
+    changeLink: function () {
+      this.linkVal = "https://www.facebook.com";
     },
   },
 };
